@@ -1,8 +1,7 @@
-FROM node:14.17.5
+FROM node
 
-WORKDIR /app
-COPY package.json ./
+WORKDIR /var/node
+COPY . /var/node
 RUN npm install
-COPY . .
 CMD ["node","app.js"]
 EXPOSE 3005
