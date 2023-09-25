@@ -24,11 +24,10 @@ pipeline{
                 echo "running web app on node server"
                 sh '''
                 docker pull docanmol/practise-jenkins:v$BUILD_NUMBER
-                if [ ! "$(docker ps -a -q -f name=nodeapp)" ]; then
-                    if [ "$(docker ps -aq -f status=exited -f status=running -f name=nodeapp)" ]; then
-                        docker stop nodeapp
-                        docker rm nodeapp
-                    fi
+                if [  "$(docker ps -a -q -f name=^nodeapp$)" ]; then
+                    docker stop nodeapp
+                    docker rm nodeapp
+                
                 fi
                 docker run -itd --name nodeapp -p 8091:3005 docanmol/practise-jenkins:v$BUILD_NUMBER
                 sh '''
