@@ -28,6 +28,7 @@ pipeline{
                     if [ "$(docker ps -aq -f status=exited -f name=nodeapp)" ]; then
                         docker stop nodeapp
                         docker rm nodeapp
+                    fi
                 fi
                 docker run -itd --name nodeapp -p 8091:3005 docanmol/practise-jenkins:v$BUILD_NUMBER
                 sh '''
