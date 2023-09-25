@@ -5,7 +5,8 @@ pipeline{
     stages{
         stage('Creating Image'){
             steps{
-                echo "building docker image"
+                echo "building docker image"\
+                sh '''
                 original_pwd=$(pwd -P)
                 cd Practise/
                 docker build -t docanmol/practise-jenkins:v$BUILD_NUMBER .
