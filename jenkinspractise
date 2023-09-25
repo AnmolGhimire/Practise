@@ -1,0 +1,23 @@
+pipeline{
+    agent {
+        label 'Buildin-Node'
+    }
+    stages{
+        stage('Creating Image'){
+            steps{
+                echo "building docker image"
+                original_pwd=$(pwd -P)
+                cd practise/
+                docker build -t docanmol/practise-jenkins:v$BUILD_NUMBER .
+                docker push docanmol/practise-jenkins:v$BUILD_NUMBER
+
+                cd $original_pwd
+                sh '''
+            }
+        }
+    }
+}
+
+        
+        
+
