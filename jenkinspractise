@@ -2,7 +2,7 @@ pipeline{
     agent {
         label 'Buildin-Node'
     }
-    stages{
+    stages {
         stage('Creating Image'){
             steps{
                 echo "building docker image"
@@ -30,10 +30,9 @@ pipeline{
                         docker rm nodeapp
                 fi
                 docker run -itd --name nodeapp -p 8091:3005 docanmol/practise-jenkins:v$BUILD_NUMBER
-		sh '''
-
-
+                sh '''
             }
+        }
     }
 }
 
