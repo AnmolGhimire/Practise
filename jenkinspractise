@@ -7,7 +7,7 @@ pipeline{
             steps{
                 echo "building docker image"
                 original_pwd=$(pwd -P)
-                cd practise/
+                cd Practise/
                 docker build -t docanmol/practise-jenkins:v$BUILD_NUMBER .
                 docker push docanmol/practise-jenkins:v$BUILD_NUMBER
 
