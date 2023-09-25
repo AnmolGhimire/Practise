@@ -1,6 +1,6 @@
 pipeline{
     agent {
-        label 'Buildin-Node'
+        label 'BuildIn-Node'
     }
     stages{
         stage('Creating Image'){
