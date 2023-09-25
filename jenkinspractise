@@ -30,6 +30,7 @@ pipeline{
                         docker rm nodeapp
                 fi
                 docker run -itd --name nodeapp -p 8091:3005 docanmol/practise-jenkins:v$BUILD_NUMBER
+		sh '''
 
 
             }
