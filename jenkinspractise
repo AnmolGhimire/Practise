@@ -25,7 +25,7 @@ pipeline{
                 sh '''
                 docker pull docanmol/practise-jenkins:v$BUILD_NUMBER
                 if [ ! "$(docker ps -a -q -f name=nodeapp)" ]; then
-                    if [ "$(docker ps -aq -f status=exited -f name=nodeapp)" ]; then
+                    if [ "$(docker ps -aq -f status=exited -f status=running -f name=nodeapp)" ]; then
                         docker stop nodeapp
                         docker rm nodeapp
                     fi
