@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp
+  labels:
+    app: webapp
+    type: front-end
+spec:
+  template:
+    metadata:
+      name: webapp
+      labels:
+        type: front-end
+    spec:
+      containers:
+      - name: webappcon
+        image: docanmol/practise-jenkins:v18
+        ports:
+        - containerPort: 8091
+  replicas: 2
+  selector:
+    matchLabels:
+      type: front-end
