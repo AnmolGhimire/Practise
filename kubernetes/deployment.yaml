@@ -17,7 +17,7 @@ spec:
         image: docanmol/practise-jenkins:v19
         ports:
         - containerPort: 8091
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       type: front-end
