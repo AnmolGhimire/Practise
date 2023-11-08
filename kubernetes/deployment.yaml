@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: webappcon
-        image: docanmol/practise-jenkins:v18
+        image: docanmol/practise-jenkins:v19
         ports:
         - containerPort: 8091
   replicas: 2
